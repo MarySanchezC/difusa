@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Logic Project v.0.1</title>
+    </head>
+    <body>
+    <div class="container">
+        <div class="forms-container">
+        <div class="signin-signup">
+            <form action="#" class="sign-in-form">
+            <h2 class="title">Bienvenida</h2>
+            <div class="input-field1">
+                <p>
+                Debes saber que... Este sistema realizará un análisis de datos para determinar el riesgo renal en mujeres.
+                </p>
+            </div>
+            </form>
+            <form action="#" class="sign-up-form">
+        
+            <h2 class="title">¿Eres biológicamente mujer?</h2>
+            <div class="input-field1">
+                <button type="button" class="btn solid" id="siButton">Si</button>
+                <button type="button" class="btn solid" id="noButton">No</button>     
+            </form>
+        </div>
+        </div>
+
+        <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+            <h3>Antes de ingresar debemos preguntarte algo...</h3>      
+            <button class="btn transparent" id="sign-up-btn">
+                De acuerdo
+            </button>
+            </div>
+            <img src="img.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+            
+            <img src="img2.svg" class="image" alt="" />
+        </div>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+    <script>
+        // Agregar event listeners para los botones
+        document.getElementById("siButton").addEventListener("click", function() {
+            window.location.href = "Question2.html";
+        });
+        
+        document.getElementById("noButton").addEventListener("click", function() {
+            window.location.href = "salir.html";
+        });
+        </script>
+    </body>
+    </html>

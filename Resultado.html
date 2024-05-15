@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Logic Project v.0.1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="#" class="sign-in-form">
+                    <h2 class="title">Su riesgo de prensentar enfermedad renal es:</h2>
+                    <h2 id="resultado" style="width: 300px"></h2>
+                
+                </form>
+            </div>
+        </div>
+
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content"></div>
+                <img src="img3.svg" class="image" alt="" />
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var pregunta1 = parseFloat(localStorage.getItem('pregunta1'));
+        var pregunta2 = parseFloat(localStorage.getItem('pregunta2'));
+        var pregunta3 = parseFloat(localStorage.getItem('pregunta3'));
+        var pregunta4 = parseFloat(localStorage.getItem('pregunta4'));
+        var pregunta5 = parseFloat(localStorage.getItem('pregunta5'));
+        var pregunta6 = parseFloat(localStorage.getItem('pregunta6'));
+        var pregunta7 = parseFloat(localStorage.getItem('pregunta7'));
+        var pregunta8 = parseFloat(localStorage.getItem('pregunta8'));
+        var pregunta9 = parseFloat(localStorage.getItem('pregunta9'));
+        var pregunta10 = parseFloat(localStorage.getItem('pregunta10'));
+
+        // Verificar si las variables son null y asignarles un valor predeterminado
+        pregunta1 = pregunta1 || 0;
+        pregunta2 = pregunta2 || 0;
+        pregunta3 = pregunta3 || 0;
+        pregunta4 = pregunta4 || 0;
+        pregunta5 = pregunta5 || 0;
+        pregunta6 = pregunta6 || 0;
+        pregunta7 = pregunta7 || 0;
+        pregunta8 = pregunta8 || 0;
+        pregunta9 = pregunta9 || 0;
+        pregunta10 = pregunta10 || 0;
+
+        var sumaTotal = pregunta1 + pregunta2 + pregunta3 + pregunta4 + pregunta5 + pregunta6 + pregunta7 + pregunta8 + pregunta9 + pregunta10;
+        var interpretacion = "";
+
+        if (sumaTotal >= 0 && sumaTotal <= 1) {
+            interpretacion = "Bajo ";
+        } else if (sumaTotal > 1 && sumaTotal <= 1.9) {
+            interpretacion = "Moderado";
+        } else if (sumaTotal > 2 && sumaTotal <= 2.4) {
+            interpretacion = "Alto";
+        } else if (sumaTotal => 2.5) {
+            interpretacion = "Muy alto ";
+        }
+
+        // Mostrar la interpretación del resultado arriba del botón "Siguiente"
+        console.log(sumaTotal);
+        console.log(interpretacion);
+        document.getElementById("resultado").innerText = interpretacion;
+    </script>
+</body>
+</html>

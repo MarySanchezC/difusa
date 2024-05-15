@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Logic Project v.0.1</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container">
+        <div class="signin-signup">
+          <form action="#" class="sign-in-form">
+            <h2 class="title">Tiene antecedentes familiares de enfermedad renal cronica?</h2>
+    
+          
+            
+           <div class="option">
+                    <input type="radio" id="opcion1" name="opciones" value="0,0">
+                    <label for="opcion1">No  </label>
+                </div>
+
+                <div class="option">
+                    <input type="radio" id="opcion2" name="opciones" value="0,5">
+                    <label for="opcion2">Si</label>
+                </div>
+           
+
+           
+          
+            
+              <br>
+              <br>
+          <a class="siguiente boton-rosado" id="pregunta4" href="Question6.html" onclick="return validateForm()"><span class="text">Siguiente</span></a>
+
+          </form>
+          
+        </div>
+      </div>
+
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+  
+          
+          </div>
+          <img src="img.svg" class="image" alt="" />
+        </div>
+        
+
+          
+        </div>
+      </div>
+    </div>
+
+    
+
+    <script>
+      function validateForm() {
+          var radios = document.getElementsByName("opciones");
+          var formValid = false;
+
+          for (var i = 0; i < radios.length; i++) {
+              if (radios[i].checked) {
+                  formValid = true;
+                  break;
+              }
+          }
+
+          if (!formValid) {
+              alert("Por favor, seleccione una opción.");
+              return false;
+          }
+
+          var puntos = parseFloat(radios[i].value);
+          localStorage.setItem('pregunta4', puntos);
+
+          return true;
+      }
+    </script>
+  </body>
+</html>
